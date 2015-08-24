@@ -6,7 +6,7 @@ listenergy = []
 
 
 def seampractice():
-    table = [[0 for suby in range(height)] for subx in range(width)]
+    table = [[0 for suby in range(height)] for subx in range(width)] #Creates table to store basic greyscale value
     for x in range(width):
         for y in range(height):
             (Red, Green, Blue) = land.getpixel((x,y))
@@ -14,54 +14,59 @@ def seampractice():
             newgreen = Green * .72
             newblue = Blue * .07
             totalcolor =  int((newred + newgreen + newblue))
-            land.putpixel((x,y), (totalcolor, totalcolor, totalcolor))
+            land.putpixel((x,y), (totalcolor, totalcolor, totalcolor)) #Calculates Greyscale
             table[x][y] = totalcolor
-    entable = [[0 for suby in range(height)] for subx in range(width)]
+    entable = [[0 for suby in range(height)] for subx in range(width)] #Creates table to calculates each pixel's energy values
     for x in range(width):
         for y in range(height):
             a,b = 1,1
             if y == (height -1):
                 a = 0
-            if x == (width - 1):
+            if x == (width - 1): #if cases are for when points on edges where outside values cannot be obtained (out of range)
                 b = 0
             entable[x][y] = ((abs(table[x][y] - table[x+b][y])) + abs(table[x][y] - table[x][y+a]))
-    totalentable = [[0 for sub in range(height)] for subx in range(width)]
+    totalentable = [[0 for sub in range(height)] for subx in range(width)] #creates table for storing total least energy values
     totalentable[0][0] = 0
-    for x in range(width):
-        for y in range(height):
-            c,d = -1,1
-            if x == 0:
+    for y in range(height): #For y and For x need to be in this order where we calculate energy row by row not column by column where above energy values will not be present
+        for x in range(width):
+            c,d = -1,1         #Cases for when the x is at the edge where a table value above a point would not be available.
+            if x == 0:             
                 c =0
             if x == width -1:
                 d = 0
-            totalentable[x][y] =entable[x][y] + testtopmin(x,y,totalentable[x][y-1],totalentable[x+c][y-1],totalentable[x+d][y-1])
-    for x in range(3):
-        for y in range(3):
-            print entable[x][y]
-            print totalentable[x][y]
+            totalentable[x][y] = entable[x][y] + testtopmin(y,totalentable[x][y-1],totalentable[x+c][y-1],totalentable[x+d][y-1])
+                #adds the energy values and stores in table
+    for y in range(height, 0, -1):
+        for x in range(width):
+            pass
 
 
+        
+              
+##    for x in range(5):
+##        for y in range(5):
+##            print entable[x][y]
+##            print totalentable[x][y]
+##
 
-def testtopmin(x,y,q,w,e):
-    c,d = -1,1
+
+def testtopmin(y,q,w,e):
+    """Compares the energy values above the point indicated (The three values being evaluated are above and above diagonally) Returns the lowest value of energy""" 
     if y == 0:
         return 0
-    if x == 0:
-        c =0
-    if x == width -1:
-        d = 0
-    if w >= q:
+    elif w >= q:
         if q < e:
             return q
         else:
-            return e
-    elif w < e:
+            return e   
+    elif w <= e:
         return w
     else:
         return e
+    return 0
 
-
-##    
+##    if y == 0:
+##        return 0
 ##    ef testtopmin(x,y,q,w,e):
 ##    c,d = -1,1
 ##    if y == 0:
@@ -105,8 +110,5 @@ def testtopmin(x,y,q,w,e):
 ##            listenergy.append(totalenergy)
 ##            listenergy[:1]
 ##            
-##    
-    land.show()
+land.show()
 ##    print listenergy
-
-
