@@ -118,24 +118,50 @@ def seampractice(pic, n):
             totalentable[x][y] = entable[x][y] + testtopmin(y,totalentable[x][y-1],totalentable[x+c][y-1],totalentable[x+d][y-1])
                 #adds the energy values and stores in table
     a = 9999999
-    mintotalentable = [0 for i in range(height)]
+    mintotalentable = [[0 for i in range(height)] for h in range(2)]
+    y = height - 1
+    for x in range(width):
+        b = totalentable[x][y]
+        if a > b:
+            a = b
+            mintotalentable[0][y] = b
+            mintotalentable[1][y] = x
+            c =x
+    newimage = Image.new('RGB', ((width - 1), (height)), (255,255,255))
+    b = 999999999
+    finx = c
     for y in range(height - 1, 0, -1):
-        for x in range(width):
-            b = min(totalentable[x][y], 1000000)
-            if a > b:
-                a = b
-                mintotalentable[y] = b
-    newimage = Image.new('RGB', ((width - 1), (height)), (255,255,255))        
-    for y in range(height -1, 0, -1):
-        for x in range(width - 3):
-            if totalentable[x][y] == mintotalentable[y]:
-                if x < width:
-                    x = x + 1
-            (red, green, blue) = pic.getpixel((x,y))
-            newimage.putpixel((x,y), (red, green, blue))
-    print newimage.size
-    
-    
+        for subx in range(-1,2,1):
+            if finx == width - 1 & subx == 1:
+                subx = 0
+            if finx == 0 & subx == -1:
+                subx = 0
+            a = totalentable[finx+subx][y]
+            if a < b:
+                b = a
+                finx = finx + subx
+                finy = y
+        for secx in range(width - 1):
+            thix = secx
+            if secx == finx:
+                thix = secx - 1
+                pass
+            (r,g,b) = pic.getpixel((secx, y))
+            newimage.putpixel((thix,y),(r,g,b))
+        
+        
+            
+
+##    for y in range(height - 1, 0, -1):
+##        for x in range(width - 3):
+##            if totalentable[x][y] == mintotalentable[y][0]:
+##                if x < width:
+##                    x = x + 1
+##            (red, green, blue) = pic.getpixel((x,y))
+##            newimage.putpixel((x,y), (red, green, blue))
+##    print newimage.size
+##    
+    newimage.show()
     
     
     if n > 0 :
