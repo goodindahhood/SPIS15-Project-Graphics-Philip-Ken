@@ -252,8 +252,9 @@ def seampractice(pic, n):
         
 --------------------------------------------------------------------------------------------
 from PIL import Image, ImageDraw
+import webbrowser
 
-land2 = Image.open('Animulandscape.jpg')
+land = Image.open('Animulandscape.jpg')
 land3 = Image.open('Animulandscape.jpg')
 listenergy = []
 
@@ -352,7 +353,8 @@ def testtopmin(y,q,w,e):
 
 def seampractice(pic, n):
     
-    width, height = pic.size    
+    width, height = pic.size
+    width1, height1 = orig.size
     table = [[0 for suby in range(height)] for subx in range(width)] #Creates table to store basic greyscale value
     for x in range(width):
         for y in range(height):
@@ -484,42 +486,20 @@ def seampractice(pic, n):
                     li[forx][finy] = [forx,finy]
             (r,g,b) = pic.getpixel((forx, finy))
             newimage.putpixel((thix,finy),(r,g,b))
-    prseams(li,height1,width1, orig)
-            
+    filename = "test.jpg"
+    newimage.save(filename)
+    webbrowser.open(filename)
+##    width1 = width1 -1
+##    height1 = height1 -1
+    prseams(li,(height1),(width1), newimage)
 
-
-   
-        
-            
-         
-
-
-
-    
-        
-        
-            
-
-##    for y in range(height - 1, 0, -1):
-##        for x in range(width - 3):
-##            if totalentable[x][y] == mintotalentable[y][0]:
-##                if x < width:
-##                    x = x + 1
-##            (red, green, blue) = pic.getpixel((x,y))
-##            newimage.putpixel((x,y), (red, green, blue))
-##    print newimage.size
-##  
-    
     
     if n > 1 :
         seampractice(newimage, n - 1)
     if n == 1:
-        end.show()
 ##        countwhite(end)
-        getridcolor(end)
-                
+        getridcolor(end)          
     a = newimage
-    
     return a
         
 def getridcolor(pic):
@@ -531,9 +511,12 @@ def getridcolor(pic):
             if (r,g,b) != (255,0,0):
                 pass
             else:
-                (r,g,b) = pic.getpixel((x +1,y))
+                add = 1
+                if x == width -1:
+                    add = 0
+                (r,g,b) = pic.getpixel((x + add,y))
             newimage.putpixel((x,y),(r,g,b))
-    newimage.show()
+
         
 
 def countwhite(pic):
@@ -550,8 +533,8 @@ def countwhite(pic):
     print count
 
 def prseams(li,height1, width1, orig):
-    for y in range(height1 - 1):
-            for x in range (width1 - 1):
+    for y in range(height1):
+            for x in range (width1):
                 suby = 0
                 if li[x][y] == [x,y]:
                     suby = 1
@@ -559,11 +542,13 @@ def prseams(li,height1, width1, orig):
                 else:
                     (r,g,b) = orig.getpixel((x,y))
                     end.putpixel((x,y),(r,g,b))
-    end.show()
     orig = end
     height1, width1 = orig.size
     li = [[0 for sub in range(height1)] for subx in range(width1)]
+    getridcolor(orig)
+    filename1 = "test1.jpg"
+    end.save(filename1)
+    import webbrowser
+    webbrowser.open(filename1)
                 
-
-            
 
