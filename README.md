@@ -16,5 +16,5 @@ Known Benefits -
 1.) Picture is resized (smaller) while keeping all the important details included unlike cropping or scaling
 
 Known Detriments-
-1.) Some of the important details do get cut out since the formula cuts that part of the image, thinking it has the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lowest energy
+1.) Some of the important details do get cut out since the formula cuts that part of the image, thinking it &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;has the  lowest energy
 
