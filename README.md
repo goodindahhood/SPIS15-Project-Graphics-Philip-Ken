@@ -11,5 +11,10 @@
 * Using the location of each pixel we created a red blank picture and painted the original picture on top of it while &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skipping the pixels that were apart of the lowest energy seam.  
 * A clear red line/seam of the lowest energy is shown on the new picture so we create a smaller picture (by 1 pixel) that &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;skips the red line essentially removing the seam. 
 * This step is repeated by the desired amount of times to get the size we want.  
-*
+
+Known Benefits -
+1.) Picture is resized (smaller) while keeping all the important details included unlike cropping or scaling
+
+Known Detriments-
+1.) Some of the important details do get cut out since the formula cuts that part of the image, thinking it has the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lowest energy
 
