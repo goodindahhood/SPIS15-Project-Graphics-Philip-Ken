@@ -18,7 +18,7 @@
 
 **Known Detriments -**    
 1.) Some of the important details do get cut out since the formula cuts that part of the image, thinking it has the lowest &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;energy  
-*(Content Aware Seam Carving causes the important details to be saved by making the content contain more "energy")*
+*(Content Aware Seam Carving causes the important details to be saved by making the content contain more "energy", negating this detriment)*
 2.)The picture sometimes become disjointed where the left side of a pixel might not blend well with the right  
  
 
@@ -26,7 +26,7 @@
 **Known Problems -**    
 1.) By removing lots of height or y pixel length, lines are created that move certain parts of the picture up 1 pixel  
 2.) Removing lots of either x or y pixel length creates areas that don't blend well together  
-*(Seam Carving through first resizing then seam carving fixes some detriments/problems)* 
+*(Seam Carving through first resizing then seam carving fixes some detriments/problems like this)* 
   
 
 **Examples**  
