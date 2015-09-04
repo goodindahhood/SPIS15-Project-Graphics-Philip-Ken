@@ -17,4 +17,8 @@ Known Benefits -
 
 Known Detriments -  
 1.) Some of the important details do get cut out since the formula cuts that part of the image, thinking it has the lowest &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;energy
+2.)The picture sometimes become disjointed where the left side of a pixel might not blend well with the right
+
+Known Problems -  
+1.) By removing lots of height or y pixels, lines are created that move certain parts of the picture up 1 pixel
 
