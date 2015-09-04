@@ -1,7 +1,7 @@
 # SPIS15-Project-Graphics-Philip-Ken
 
 # ┬─┬ノ( º _ ºノ)(ﾉಥ益ಥ）ﾉ﻿ ┻━┻,
-#A Phillip and Ken created Graphical Project for Spis 2015
+##A Phillip and Ken created Graphical Project for SPIS 2015
 
 ##Seam Carving
 
