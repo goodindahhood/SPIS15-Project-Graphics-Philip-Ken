@@ -1,5 +1,6 @@
 # SPIS15-Project-Graphics-Philip-Ken
 
+##┻━┻ ︵ヽ(`Д´)ﾉ︵﻿ ┻━┻
 
 ##Seam Carving
 
@@ -26,7 +27,8 @@
 **Known Problems -**    
 1.) By removing lots of height or y pixel length, lines are created that move certain parts of the picture up 1 pixel  
 2.) Removing lots of either x or y pixel length creates areas that don't blend well together  
-*(Seam Carving through first resizing then seam carving fixes some detriments/problems like this)* 
-  
+*(Seam Carving through first resizing then seam carving fixes some detriments/problems like this)*  
+
+<sub>3.)Our seam carving program only removes seams by width and height; however height removal needs work. Also this program cannot add seams to expand seams in an image, thereby increasing height and width.</sub>
 
 **Examples**  
