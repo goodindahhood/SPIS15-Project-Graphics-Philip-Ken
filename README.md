@@ -1,5 +1,5 @@
 
-# ┬─┬ノ( º _ ºノ)(ﾉಥ益ಥ）ﾉ﻿ ┻━┻ʕ•ᴥ•ʔ
+# ┬─┬ノ( º _ ºノ)(ﾉಥ益ಥ）ﾉ﻿ ┻━┻ ʕ•ᴥ•ʔ
 ##A Phillip and Ken created Graphical Project for SPIS 2015
 
 ###Seam Carving
