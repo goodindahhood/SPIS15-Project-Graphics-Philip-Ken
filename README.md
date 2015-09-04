@@ -1,6 +1,6 @@
 # SPIS15-Project-Graphics-Philip-Ken
 
-##(ﾉಥ益ಥ）ﾉ﻿ ┻━┻
+## ┬─┬ノ( º _ ºノ)(ﾉಥ益ಥ）ﾉ﻿ ┻━┻, A Phillip and Ken created program
 
 ##Seam Carving
 
