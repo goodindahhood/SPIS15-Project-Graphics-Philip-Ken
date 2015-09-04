@@ -1,20 +1,16 @@
-
-
-
-
 from PIL import Image, ImageDraw
 
-land = Image.open('test.jpg')
+land = Image.open('Animulandscape.jpg')
 land3 = Image.open('Animulandscape.jpg')
 land4 = Image.open('TowerDefense.jpg')
-land5 = Image.open('Cornercut.jpg')
+land5 = Image.open('Saber.jpg')
 
 
 global li
 global orig
 global end
 
-orig = Image.open('test.jpg')
+orig = Image.open('Animulandscape.jpg')
 width1, height1 = orig.size
 li = [[0 for subi in range(2000)] for subu in range(1500)]
 end = Image.new('RGB', ((width1), (height1)), (255,255,255))
