@@ -18,7 +18,7 @@
 
 **Known Detriments -**    
 1.) Some of the important details do get cut out since the formula cuts that part of the image, thinking it has the lowest &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;energy  
-*(Content Aware Seam Carving causes the important details to be saved by making the content contain more "energy", negating this detriment)*
+*(Content Aware Seam Carving causes the important details to be saved by making the content contain more "energy", &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; negating this detriment)*  
 2.)The picture sometimes become disjointed where the left side of a pixel might not blend well with the right  
  
 
