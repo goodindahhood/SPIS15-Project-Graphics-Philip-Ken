@@ -20,5 +20,6 @@ Known Detriments -
 2.)The picture sometimes become disjointed where the left side of a pixel might not blend well with the right
 
 Known Problems -  
-1.) By removing lots of height or y pixels, lines are created that move certain parts of the picture up 1 pixel
+1.) By removing lots of height or y pixel length, lines are created that move certain parts of the picture up 1 pixel
+2>) Removing lots of either x or y pixel length creates areas that don't blend well together
 
