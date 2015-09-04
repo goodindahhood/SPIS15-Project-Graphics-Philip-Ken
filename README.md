@@ -1,6 +1,6 @@
 # SPIS15-Project-Graphics-Philip-Ken
 
-##┻━┻ ︵ヽ(`Д´)ﾉ︵﻿ ┻━┻
+##(ﾉಥ益ಥ）ﾉ﻿ ┻━┻
 
 ##Seam Carving
 
