@@ -33,12 +33,12 @@ def seampractice(pic, n):
     for x in range(width):
         a,b = 1,1
         for y in range(height):
-            if y >= height-1 or x>= width-1:
-                if y >= (height -1):
+            if y >= height-1 or x>= width-1 or x <= 0 or y <= 0:
+                if y >= (height -1 or y <= 0):
                     a = 0
-                if x >= (width - 1): #if cases are for when points on edges where outside values cannot be obtained (out of range)
+                if x >= (width - 1)or x <= 0: #if cases are for when points on edges where outside values cannot be obtained (out of range)
                     b = 0
-            entable[x][y] = ((abs(table[x][y] - table[x+b][y])) + abs(table[x][y] - table[x][y+a]))
+            entable[x][y] = ((abs(table[x-b][y] - table[x+b][y])) + abs(table[x][y-a] - table[x][y+a]))
     totalentable = [[0 for sub in range(height)] for subx in range(width)] #creates table for storing total least energy values
     totalentable[0][0] = 0
 
@@ -188,12 +188,12 @@ def seampractice1(pic, n):
     for x in range(width):
         a,b = 1,1
         for y in range(height -1, -1, -1):
-            if y <= (0) or x>= (width -1):
-                if y <= (0):
+            if y <= (0) or x>= (width -1) or x <= 0 or y >= height -1:
+                if y <= (0) or x<= 0:
                     a = 0
-                if x >= (width - 1): #if cases are for when points on edges where outside values cannot be obtained (out of range)
+                if x >= (width - 1) or y >= height -1: #if cases are for when points on edges where outside values cannot be obtained (out of range)
                     b = 0
-            entable[x][y] = ((abs(table[x][y] - table[x+b][y])) + abs(table[x][y] - table[x][y-a]))
+            entable[x][y] = ((abs(table[x-a][y] - table[x+b][y])) + abs(table[x][y+b] - table[x][y-a]))
     totalentable = [[0 for sub in range(height)] for subx in range(width)] #creates table for storing total least energy values
     totalentable[0][height - 1] = 0
 
